@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useQuery } from '@apollo/react-hooks'
 import { gql } from 'apollo-boost'
 
 import { colors } from '../styles/colors'
+import Chirp from './Chirp'
+import { HomeWrapper } from '../styles/HomeStyles'
 
 const getUsers = gql`
     {
@@ -21,13 +23,13 @@ const Home = () => {
     console.log(data)
     
     return data.users.map(({ id, email, messages }) => (
-        <div key={id}>
+        <HomeWrapper key={id}>
             <p>{email}</p>
-            {messages && messages.map(message => <p>{message}</p>)}
-        </div>
-        // <div style={{maxWidth: '550px', display: 'flex', flexWrap: 'wrap', margin: '25% auto'}}>
-        //     {colors && colors.map(el => <div style={{height: '100px', width: "100px", background: el, margin: '10px 5px'}}></div>)}
-        // </div>
+            {messages && messages.map(message => <Chirp message={message} />)}
+            <div style={{maxWidth: '550px', display: 'flex', flexWrap: 'wrap', margin: '1% auto'}}>
+                {colors && colors.map(el => <div style={{height: '100px', width: "100px", background: el, margin: '10px 5px'}}></div>)}
+            </div>
+        </HomeWrapper>
     ))
 }
 
