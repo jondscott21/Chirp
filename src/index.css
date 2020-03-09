@@ -101,12 +101,14 @@ select {
 }
 
 html {
-  background: #284E5E;
-  /* background: #3E6D86;
-  background: #271837; */
+  /* background: #284E5E; */
+  background: #3E6D86;
+  /* background: #3E6D86; */
+  /* background: #271837; */
   font-size: 62.5%;
 }
 
 h1, h2, h3, h4, h5, h6, p, a {
   font-size: 1.6rem;
+  color: #F6D632;
 }

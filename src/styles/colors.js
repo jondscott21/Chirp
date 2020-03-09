@@ -30,3 +30,7 @@ export const colors = [
     '#B8AF94',
     '#785B4E'
 ]
+
+// {/* <div style={{maxWidth: '550px', display: 'flex', flexWrap: 'wrap', margin: '1% auto'}}>
+//     {colors && colors.map(el => <div style={{height: '100px', width: "100px", background: el, margin: '10px 5px', border: 'black solid 1px'}}></div>)}
+// </div> */}

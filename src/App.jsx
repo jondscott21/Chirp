@@ -1,12 +1,17 @@
 import React from 'react';
 import './App.css';
 import Home from './components/Home'
+import NavBar from './components/NavBar'
+import Suggestions from './components/Suggestions'
+import { AppWrapper } from './styles/AppStyles'
 
 function App() {
   return (
-    <div className="App">
+    <AppWrapper>
+      <NavBar />
       <Home />
-    </div>
+      <Suggestions />
+    </AppWrapper>
   );
 }
 
