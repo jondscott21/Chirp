@@ -1,12 +1,13 @@
 import React from 'react'
+import { ChirpWrapper } from '../styles/ChirpStyles'
 
 const Chirp = (props) => {
     const { message } = props
     return (
-    <div>
+    <ChirpWrapper>
         <h4>Posters name <span>Poster Handle . Time</span></h4>
         <p>{message}</p>
-    </div>
+    </ChirpWrapper>
     )
 }
 
