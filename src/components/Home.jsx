@@ -4,7 +4,7 @@ import { gql } from 'apollo-boost'
 
 import { colors } from '../styles/colors'
 import Chirp from './Chirp'
-import { HomeWrapper } from '../styles/HomeStyles'
+import { HomeWrapper, ChirpInput } from '../styles/HomeStyles'
 
 const getUsers = gql`
     {
@@ -22,13 +22,23 @@ const Home = () => {
     if(error) return <p>Error: {error}</p>
     console.log(data)
     
-    return data.users.map(({ id, email, messages }) => (
-        <HomeWrapper key={id}>
-            <p>{email}</p>
-            {messages && messages.map(message => <Chirp message={message} />)}
-            
-        </HomeWrapper>
-    ))
+    return (
+        <div>
+            <div>
+                <img src='' alt='' />
+                <form>
+                    <ChirpInput type='text' name='message' placeholder="What's happening?" />
+                </form>
+            </div>
+            {data.users.map(({ id, email, messages }) =>
+                <HomeWrapper key={id}>
+                    <p>{email}</p>
+                    {messages && messages.map(message => <Chirp message={message} />)}
+                    
+                </HomeWrapper>
+            )}
+        </div>
+    )
 }
 
 export default Home

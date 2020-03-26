@@ -1,14 +1,16 @@
 import React from 'react';
 import './App.css';
 import Home from './components/Home'
-import NavBar from './components/NavBar'
+import SideNavBar from './components/SideNavBar'
+import TopNavBar from './components/TopNavBar'
 import Suggestions from './components/Suggestions'
 import { AppWrapper } from './styles/AppStyles'
 
 function App() {
   return (
     <AppWrapper>
-      <NavBar />
+      <TopNavBar />
+      <SideNavBar />
       <Home />
       <Suggestions />
     </AppWrapper>
